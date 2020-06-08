@@ -211,7 +211,7 @@ export class Config implements IConfig {
      * The address prefix your coin uses - you can find this in CryptoNoteConfig.h.
      * In TurtleCoin, this converts to TRTL
      */
-    public addressPrefix: number = 3771344;
+    public addressPrefix: number = 3062687;
 
     /**
      * Request timeout for daemon operations in milliseconds
