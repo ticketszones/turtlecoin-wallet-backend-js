@@ -205,7 +205,7 @@ export class Config implements IConfig {
      * The amount of decimal places your coin has, e.g. TurtleCoin has two
      * decimals
      */
-    public decimalPlaces: number = 4;
+    public decimalPlaces: number = 2;
 
     /**
      * The address prefix your coin uses - you can find this in CryptoNoteConfig.h.
@@ -216,12 +216,12 @@ export class Config implements IConfig {
     /**
      * Request timeout for daemon operations in milliseconds
      */
-    public requestTimeout: number = 20 * 1000;
+    public requestTimeout: number = 10 * 1000;
 
     /**
      * The block time of your coin, in seconds
      */
-    public blockTargetTime: number = 50;
+    public blockTargetTime: number = 30;
 
     /**
      * How often to process blocks, in millseconds
@@ -248,7 +248,7 @@ export class Config implements IConfig {
     /**
      * Your coins 'ticker', generally used to refer to the coin, i.e. 123 TRTL
      */
-    public ticker: string = 'BTCMZ';
+    public ticker: string = 'TKTS';
 
     /**
      * Most people haven't mined any blocks, so lets not waste time scanning
@@ -259,7 +259,7 @@ export class Config implements IConfig {
     /**
      * The minimum fee allowed for transactions, in ATOMIC units
      */
-    public minimumFee: number = 1000;
+    public minimumFee: number = 10;
 
     /* Fee per byte is rounded up in chunks. This helps makes estimates
      * more accurate. It's suggested to make this a power of two, to relate
@@ -271,14 +271,14 @@ export class Config implements IConfig {
      * something like 2 because it makes for pretty resulting fees
      * - 5 TRTL vs 5.12 TRTL. You can read this as.. the fee per chunk
      * is 500 atomic units. The fee per byte is 500 / chunk size. */
-    public minimumFeePerByte = 105000.00 / this.feePerByteChunkSize;
+    public minimumFeePerByte = 1000.00 / this.feePerByteChunkSize;
 
     /**
      * Mapping of height to mixin maximum and mixin minimum
      */
     public mixinLimits: MixinLimits = new MixinLimits([
         /* At height of 250,000, minMixin: 0, maxMixin: 3, defaultMixin: 1 */
-        new MixinLimit(250000, 0, 3, 1),
+        new MixinLimit(643000, 0, 3, 1),
     ], 1 /* Default mixin of 1 before block 250,000 */);
 
     /**
